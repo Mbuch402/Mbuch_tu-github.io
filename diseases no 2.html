@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Health Project</title>
+    <style>/* Apply dark mode with deep forest greens and golden highlights */
+       body {
+    background-color: #FFFFFF;  /* White background instead of deep forest green */
+    color: #212529;  /* Dark text for readability on white background */
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+      /* Center big headers */
+h1, h2, .section-heading {
+    text-align: center;
+    position: relative;
+    padding-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Nature-inspired aesthetics */
+body {
+    background-color: #f8f9fa;
+    color: #2c3e50;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(to bottom, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.8) 100%), 
+                      url('https://images.unsplash.com/photo-1501854140801-50d01698950b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+header {
+    background: linear-gradient(135deg, #2d6a4f, #40916c);
+    color: #ffffff;
+    padding: 40px 0;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-bottom: 5px solid #74c69d;
+}
+
+main {
+    padding: 40px;
+    max-width: 900px;
+    margin: 30px auto;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+    border-left: 4px solid #74c69d;
+}
+
+h2::after, .section-heading::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(to right, #74c69d, #40916c);
+    border-radius: 2px;
+}
+
+h3 {
+    color: #2d6a4f;
+    border-left: 4px solid #74c69d;
+    padding-left: 12px;
+}
+
+a {
+    color: #29AB87;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+a:hover {
+    color: #1e8a6b;
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #29AB87;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+a:hover::after {
+    transform: scaleX(1);
+}
+
+ul li::before {
+    content: "🍃"; /* Leaf emoji instead of bullet */
+    position: absolute;
+    left: -20px;
+    top: 0;
+    font-size: 14px;
+    color: #40916c;
+}
+
+footer {
+    background: linear-gradient(135deg, #2d6a4f, #40916c);
+    color: #ffffff;
+    text-align: center;
+    padding: 30px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    border-top: 5px solid #74c69d;
+}
+
+/* Add subtle leaf pattern to sections */
+section {
+    position: relative;
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #e9ecef;
+}
+
+section::before {
+    content: "🌿";
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 20px;
+    opacity: 0.2;
+    transform: rotate(15deg);
+}
+
+/* Button styling */
+.btn {
+    background-color: #40916c;
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #2d6a4f;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+        
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Animal Health Data Analysis Report</h1>
+        <p>Published on January 05, 2025</p>
+    </header>
+    <main>
+        <section>
+            <h3><b>Introduction</b></h3>
+            <p>This project focuses on analyzing a dataset of animal health records to uncover patterns and insights related to diseases, symptoms, and demographic factors. The dataset includes information such as <b>animal type, age, temperature, symptoms,</b> and <b>diagnosed diseases.</b> There are different animals in the dataset but in this case I chose to work with cows simply because of my love for yogurts. To ensure a clear and manageable workflow, the project was divided into four distinct phases of analysis:</p>
+            <ul>
+                <li><b>Disease Prevalence & Demographic Patterns</b></li>
+                <li><b>Symptom-Disease Association Mapping</b></li>
+                <li><b>Temperature Profiling by Disease</b></li>
+                <li><b>Symptom Co-Occurrence Networks</b></li>
+            </ul>
+            <p>Each phase was designed to address specific questions and provide actionable insights. By breaking the project into smaller, focused analyses, the workflow became simpler, and the results were easier to interpret and communicate.</p>
+        </section>
+
+        <section>
+            <h3><b>1. <u>Disease Prevalence & Demographic Patterns</u></b></h3>
+            <h4>Objective</h4>
+            <p>The goal of this analysis was to identify the most common diseases in the dataset and explore their relationship with demographic factors such as age. This helps answer questions like:</p>
+            <ul>
+                <li><b>Which diseases are most common?</b></li>
+                <li><b>Are certain diseases more common in specific age groups?</b></li>
+            </ul>
+
+            <h4>Clear summary of the disease patterns:</h4>
+<!-- Example of proper image implementation -->
+<figure>
+    <img src="images\Graph 1.png" alt="Chart showing disease prevalence across different age groups of cows" width="800" height="400">
+    <figcaption>Figure 1: Disease prevalence by age group</figcaption>
+</figure>
+            <ul>
+                <li><b>Overall Disease Distribution:</b>
+                    <ul>
+                        <li>The diseases are fairly evenly distributed in the population.</li>
+                        <li>Blackleg and Anthrax are the most common, each affecting about 22% of cases.</li>
+                        <li>Foot and mouth follows closely at 21.62%.</li>
+                        <li>Pneumonia and lumpy virus have slightly lower prevalence at around 17% each.</li>
+                    </ul>
+                </li>
+                <li><b>Age Group Patterns:</b>
+                    <ul>
+                        <li>The distribution is remarkably consistent across both age groups.</li>
+                        <li>Young cows (1-2 years) show slightly higher rates of:
+                            <ul>
+                                <li>Anthrax (22.65%)</li>
+                                <li>Foot and mouth (22.18%)</li>
+                                <li>Lumpy virus (17.27%)</li>
+                            </ul>
+                        </li>
+                        <li>Adult cows (3-15 years) show marginally higher rates of:
+                            <ul>
+                                <li>Blackleg (22.24%)</li>
+                                <li>Pneumonia (17.54%)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h4>Key Insights</h4>
+            <ul>
+                <li>No disease shows strong age-specific preference (all ratios are close to 1.0).</li>
+                <li>The balanced distribution suggests these diseases affect both age groups similarly.</li>
+                <li>The slight variations in prevalence between age groups are not clinically significant.</li>
+            </ul>
+
+            <h4>Conclusion</h4>
+            <p>This even distribution pattern indicates that age might not be a primary factor in disease susceptibility for these particular conditions. This analysis revealed clear patterns in disease prevalence and their association with age. These insights can help prioritize disease prevention and treatment strategies for different age groups.</p>
+        </section>
+
+        <section>
+            <h3><b>2. <u>Symptom-Disease Association Mapping</u></b></h3>
+            <h4>Objective</h4>
+            <p>This phase aimed to identify which symptoms are most strongly associated with specific diseases. Here are the key symptom-disease patterns identified from the data:</p>
+
+            <ul>
+                <li><b>Disease-Exclusive Symptoms:</b>
+                    <ul>
+                        <li>
+                            Foot and Mouth Disease:
+                            <ul>
+                                <li>All blister-related symptoms (gums, hooves, mouth, tongue)</li>
+                                <li>All sore-related symptoms</li>
+                                <li>Only disease showing these distinct mouth/hoof patterns</li>
+                            </ul>
+                        </li>
+                        <li>
+                            Blackleg:
+                            <ul>
+                                <li>"Crackling sound" - exclusively appears</li>
+                                <li>"Swelling in muscle" - highly specific</li>
+                                <li>"Swelling in limb" - distinctive indicator</li>
+                            </ul>
+                        </li>
+                        <li>
+                            Anthrax:
+                            <ul>
+                                <li>"Chest discomfort" - unique to this disease</li>
+                                <li>"Swelling in neck" - specific indicator</li>
+                                <li>"Swelling in extremities" - distinctive pattern</li>
+                            </ul>
+                        </li>
+                        <li>
+                            Lumpy Virus:
+                            <ul>
+                                <li>"Painless lumps" - primary distinctive feature</li>
+                                <li>Shows unique combination with depression</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- Example of proper image implementation -->
+<figure>
+    <img src="images\Graph 2.png" alt="Chart showing disease prevalence across different age groups of cows" width="800" height="400">
+    <figcaption>Figure 2: symptoms serve as reliable diagnostic markers.</figcaption>
+</figure>
+
+            <h4>Key Observations</h4>
+            <ul>
+                <li>These symptoms serve as reliable diagnostic markers.</li>
+                <li>They appear consistently with their respective diseases.</li>
+                <li>Their presence strongly suggests specific diagnoses.</li>
+                <li>They show minimal overlap with other diseases.</li>
+            </ul>
+
+            <h4>Conclusion</h4>
+            <p>This analysis highlighted key symptoms that can aid in the early diagnosis of specific diseases. Unique symptoms like <b>Crackling Sound</b> and <b>Chest discomfort</b> are particularly useful for differentiating between diseases.</p>
+        </section>
+
+        <section>
+            <h3><b>3. <u>Temperature Profiling by Disease</u></b></h3>
+            <h4>Objective</h4>
+            <p>The goal of this analysis was to explore whether diseases are associated with abnormal body temperatures. Key questions included:</p>
+            <ul>
+                <li>Do certain diseases cause higher or lower body temperatures?</li>
+                <li>Are there significant differences in temperature ranges across diseases?</li>
+            </ul>
+
+            <h4>Temperature-Age Correlations:</h4>
+            
+            <!-- Example of proper image implementation -->
+<figure>
+    <img src="images\Graph 3.png" alt="Chart showing disease prevalence across different age groups of cows" width="800" height="400">
+    <figcaption>Figure 3: temperature can be a useful indicator for certain diseases</figcaption>
+</figure><ul> 
+                <li>
+                    Overall Pattern:
+                    <ul>
+                        <li>All correlations are very close to zero, indicating minimal relationship between age and temperature across all diseases.</li>
+                    </ul>
+                </li>
+                <li>
+                    Positive Correlations:
+                    <ul>
+                        <li>Anthrax: Strongest positive correlation (0.044) - slight tendency for temperature to increase with age.</li>
+                        <li>Lumpy Virus: Weak positive correlation (0.023) - minimal increase in temperature with age.</li>
+                    </ul>
+                </li>
+                <li>
+                    Negative Correlations:
+                    <ul>
+                        <li>Pneumonia: Strongest negative correlation (-0.021) - slight tendency for temperature to decrease with age.</li>
+                        <li>Blackleg: Weak negative correlation (-0.017).</li>
+                        <li>Foot and Mouth: Very weak negative correlation (-0.007).</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h4>Key Observations:</h4>
+            <ul>
+                <li>The correlations are consistently weak across all diseases.</li>
+                <li>Temperature response appears to be disease-dependent rather than age-dependent.</li>
+                <li>These findings suggest that fever patterns are primarily driven by the disease itself, not the age of the animal.</li>
+            </ul>
+
+            <h4>Conclusion</h4>
+            <p>This analysis revealed that temperature can be a useful indicator for certain diseases, such as <b>Anthrax</b> and <b>Blackleg</b>. Monitoring temperature trends can aid in early detection and treatment.</p>
+        </section>
+
+        <section>
+            <h3><b>4. <u>Symptom Co-Occurrence Networks</u></b></h3>
+            <h4>Objective</h4>
+            <p>This phase aimed to:</p>
+            <ul>
+                <li>Map Symptom Relationships</li>
+                <li>Create Diagnostic Insights</li>
+                <li>Develop Statistical Understanding</li>
+                <li>Enable Practical Applications</li>
+            </ul>
+
+            <h4>Network Analysis Summary Report</h4>
+            <ul>
+                <li>
+                    Symptom Connectivity
+                    <ul>
+                        <li>Total of 24 distinct symptoms identified.</li>
+                        <li>Extremely high interconnectivity with 300 unique connections.</li>
+                        <li>Each symptom connects with an average of 25 other symptoms.</li>
+                        <li>Network density of 1.087 confirms comprehensive symptom relationships.</li>
+                    </ul>
+                </li>
+                <li>
+                    Primary Symptom Clusters
+                    <ul>
+                        <li>Loss of appetite emerges as a central symptom, connecting strongly with multiple others.</li>
+                        <li>Depression forms a key secondary hub in the network.</li>
+                        <li>Painless lumps show significant correlation with core symptoms.</li>
+                        <li>Movement-related symptoms (difficulty walking) form important secondary connections.</li>
+                    </ul>
+                </li>
+                <li>
+                    Strongest Relationships
+                    <ul>
+                        <li>Loss of appetite + Depression: 41,918,525 co-occurrences.</li>
+                        <li>Loss of appetite + Painless lumps: 30,274,925 co-occurrences.</li>
+                        <li>Depression + Painless lumps: 20,726,233 co-occurrences.</li>
+                        <li>Difficulty walking shows strong connection to core symptoms.</li>
+                    </ul>
+                </li>
+                <li>
+                    Clinical Implications
+                    <ul>
+                        <li>Clear symptom patterns emerge for diagnostic consideration.</li>
+                        <li>High co-occurrence rates suggest reliable symptom combinations.</li>
+                        <li>Clear symptom patterns emerge for diagnostic consideration.</li>
+                        <li>High co-occurrence rates suggest reliable symptom combinations.</li>
+                        <li>Network structure reveals natural grouping of related symptoms.</li>
+                        <li>Strong statistical basis for symptom-based disease identification.</li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- Example of proper image implementation -->
+<figure>
+    <img src="images\Graph 4.png" alt="Chart showing disease prevalence across different age groups of cows" width="800" height="400">
+    <figcaption>Figure 4: network analysis successfully revealed robust symptom relationships</figcaption>
+</figure>
+
+            <h4><b>Key Insights/Observations</b></h4>
+            <ul>
+                <li>Loss of appetite emerges as the most influential symptom, connecting strongly with 41 million co-occurrences across the network.</li>
+                <li>The network reveals 24 unique symptoms forming 300 distinct connections, demonstrating rich diagnostic patterns.</li>
+                <li>Depression and painless lumps consistently appear together, creating reliable symptom clusters for disease identification.</li>
+                <li>Each symptom connects with an average of 25 others, showing robust relationships throughout the network.</li>
+                <li>Movement-related symptoms like difficulty walking form significant secondary connections, completing the diagnostic framework.</li>
+            </ul>
+
+            <h4>Conclusion</h4>
+            <p>This network analysis successfully revealed robust symptom relationships in cattle diseases, highlighting clear diagnostic patterns. The identification of key symptom clusters, particularly around loss of appetite and depression, provides valuable insights for veterinary practice. The strong statistical foundation, with 300 distinct connections among 24 symptoms, establishes reliable diagnostic indicators. The clear hierarchy of symptom relationships offers practical guidance for disease identification. This comprehensive understanding of symptom co-occurrences enhances the precision and effectiveness of veterinary diagnostics.</p>
+        </section>
+
+        <h2><b>Overall Conclusion</b></h2>
+        <p>By dividing the project into four focused analyses, the workflow became more manageable, and the results were easier to interpret. Each phase provided unique insights into the dataset, from understanding disease prevalence and symptom patterns to exploring temperature trends and symptom co-occurrence networks. These insights can inform better decision-making in animal health management, such as <b>early disease detection</b> using embedded devices and data analysis (<a href="Cow_Analysis_project.html" target="_blank">I did a project on that here</a>), targeted treatment, and resource allocation.</p>
+        <p>This structured approach not only simplified the analysis process but also ensured that each phase contributed meaningfully to the overall understanding of the dataset. The results are presented in a clear and actionable manner, making them suitable for both technical and non-technical audiences.</p>
+
+        <h2><u>Insight Archive & Project Repository</u></h2>
+        <b>Project Gallery</b>
+        <ul>
+            <li><b>Four distinct phases of the analysis:</b>
+                <ul>
+                    <li>View the <b>Disease Prevalence & Demographic Patterns summary</b> <a href="pdfs\Animal health pdfs\DISEASE PREVALANCE SUMMARY.pdf" target="_blank">(here)</a> or <a href="pdfs\Animal health pdfs\DISEASE PREVALANCE SUMMARY.pdf" download>download pdf</a> (PDF, 289 KB)</li>
+                    
+                    <li>View the <b>Symptom-Disease Association Mapping summary</b> <a href="pdfs\Animal health pdfs\Symptom-Disease Association.pdf" target="_blank">(here)</a> or <a href="pdfs\Animal health pdfs\Symptom-Disease Association.pdf" download>download pdf</a> (PDF, 192 KB)</li>
+                    
+                    <li>View the <b>Temperature Profiling by Disease summary</b> <a href="pdfs\Animal health pdfs\Tempreture profiling.pdf" target="_blank">(here)</a> or <a href="pdfs\Animal health pdfs\Tempreture profiling.pdf" download>download pdf</a> (PDF, 653 KB)</li>
+                    
+                    <li>View the <b>Symptom Co-Occurrence Networks summary</b> <a href="pdfs\Animal health pdfs\Symptom Co-Occurrence Networks.pdf" target="_blank">(here)</a> or <a href="pdfs\Animal health pdfs\Symptom Co-Occurrence Networks.pdf" download>download pdf</a> (PDF, 619 KB)</li>
+                </ul>
+            </li>
+            <li>view the <a href="https://github.com/Mbuch401/Animal-diseases/tree/main/Plot%20images" target="_blank">Plot images</a> (graphs) on my github too.</li>
+            <li>I downloaded the dataset from <a href="https://www.kaggle.com/datasets/researcher1548/livestock-symptoms-and-diseases" target="_blank">Kaggle</a> (3 MB)</li>
+            <li>View or download the raw python codes on <a href="https://github.com/Mbuch401/Animal-health-Projects" target="_blank">my Github repository</a></li>
+        </ul>
+
+        <h3 class="section-heading">Further Insights</h3>
+        <ul>
+            <li>
+                A blog on <a href="https://agrocares.com/data-driven-livestock-farming/" target="_blank">Data-Driven Livestock Farming</a><br>
+                Data-driven livestock farming boosts productivity and sustainability by using tech for precise feed and soil management, reducing waste and improving efficiency. Key for modern agriculture.
+            </li>
+        </ul>
+    </main>
+    <footer>
+        <p>&copy; 2025 Mbuch_tu. All rights reserved.</p>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.body.classList.add("loaded");
+        });
+    </script>
+</body>
+</html>

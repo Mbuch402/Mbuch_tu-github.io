@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investigating Reproductive Strategies and Species Conservation</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link your CSS -->
+    <style>
+        body {
+            font-family: Arial, 'Times New Roman', Times, serif;
+            line-height: 1.8; /* Increases line spacing */
+            margin: 0;
+            padding: 0;
+        }
+        header, footer {
+            text-align: center;
+            padding: 20px;
+        }
+        main {
+            padding: 20px;
+        }
+        section p {
+            line-height: 1.8; /* Additional line spacing for paragraphs */
+            margin-bottom: 20px; /* Adds spacing between paragraphs */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><u>Decoding Dairy: Using Accelerometer Data to Monitor Cow Activity Patterns.</u></h1>
+        <p>Published on Feb 20, 2025</p>
+    </header>
+    <main>
+        <section>
+            <p style="text-indent: 30px;">
+                Ever wondered how we can understand what a cow is doing without watching it 24/7? This project dives
+                 into the fascinating world of dairy cattle monitoring using modern sensor technology—and it took me three days to complete.
+                  Let me walk you through the journey.
+            </p>
+        <h3>The Challenge</h3>
+        <p style="text-indent: 30px;">
+            Imagine running a dairy farm with hundreds of cows. Each cow’s activity pattern can reveal insights into their
+             health, feeding behavior, and even reproductive status. But how do you track this efficiently without spending
+              hours observing each cow? That’s where accelerometer data comes in!<br/>
+
+                The main goal of this project was to study the <b>rest and active states</b> of cows using sensor data.
+                 Spoiler alert: it’s not as simple as it sounds, but it’s incredibly rewarding.
+        </p>
+            
+        <h3>The Solution</h3>
+
+            <p style="text-indent: 30px;">
+                By analyzing movement data collected from a cow-mounted sensor (from a dataset I downloaded on Kaggle),
+                 I developed an analysis that identifies when a cow is active versus resting. The sensor collected data 10 times every 
+                 second(there were more than 14 million rows,and 3 value columns resulting to working with 42 milion individual values),
+                  creating a detailed movement profile of the cow’s day.<br/>
+
+                To make this happen, I relied on invaluable help from different coding models to shorten some of the more complex
+                 parts of the analysis. (Thank goodness for modern tools.)
+            </p>
+           <h3> Real-World Applications</h3>
+           <p>This analysis isn’t just academic—it opens up exciting possibilities for dairy farming:
+</p>
+        <ul>
+            <li>
+               <b> Early Health Alerts:</b> Sudden changes in activity patterns might indicate illness before visible symptoms appear.
+            </li>
+            <li>
+               <b> Reproductive Timing:</b> Activity spikes can help identify optimal breeding times.
+            </li>
+            <li>
+                <b>Feeding Behavior:</b> Regular activity patterns indicate healthy feeding routines.
+            </li>
+            <li>
+                <b>Rest Monitoring: </b>Adequate rest is crucial for milk production.
+            </li>
+            <li>
+               <b> Herd Management:</b> Understanding individual cow behavior helps optimize farm operations.
+            </li>
+
+        </ul>
+        <h3>The Process</h3>
+        <p>I transformed millions of raw sensor readings into clear activity states. The analysis revealed
+             that this cow typically maintained each state (active or resting) for about 3.5 minutes before
+              transitioning—a pattern that aligns with normal bovine behavior. <br/>
+
+            It’s worth noting that this project was purely a data analysis of a cow pattern dataset I downloaded from Kaggle.
+             It wasn’t about building an embedded machine learning model, but rather about uncovering insights from the data
+              itself and how accurate it was.</p>
+            <h3>
+                Impact
+            </h3>
+            <p>This type of analysis is revolutionizing dairy farming:</p>
+            <ul>
+                <li>
+                    Reduced labor costs through automated monitoring.
+                </li>
+                <li>
+                    Improved animal welfare through early intervention.
+                </li>
+                <li>
+                    Enhanced milk production through better understanding of cow behavior.
+                </li>
+                <li> 
+                    More efficient farm management.
+                </li>
+                
+            </ul>
+            
+        <h3>
+            Future Potential
+        </h3>
+        <p>The methodology could be expanded to:</p>
+        <ul>
+            <li>
+                Track entire herds simultaneously.
+            </li>
+            <li>
+                Predict health issues before they become serious.
+            </li>
+            <li>Optimize feeding schedules.
+            </li>
+            <li>
+                Monitor nighttime behavior.
+            </li>
+            <li>
+                Identify best practices for maximum milk yield.
+            </li>
+        </ul>
+        <h3><u><i>Final Thoughts</i></u></h3>
+<p style="text-indent: 30px;">
+    This project demonstrates how data science transforms traditional farming into precision agriculture,
+     making dairy operations more efficient and sustainable while improving animal welfare. And honestly,
+      it’s pretty cool to think that a dataset from Kaggle and a few days of work can lead to
+       insights that could help farmers and cows alike.<br/>
+
+So, the next time you enjoy a glass of milk, remember: there’s a whole world of data
+ and technology working behind the scenes to make it possible!
+</p>
+
+
+
+
+
+<h2 style="text-align: center"><u>Insights and documentation</u></h2>
+
+
+       <li> The <i><b>Animal's dataset </i></b>can be found on 
+       <a href="https://www.kaggle.com/datasets/uihkjgfduyg7o8ga/animal-behaviour-accelometere-data" target="_blank">Kaggle</a><b>.</b><br/>
+       (no need for downloading it if you're not using it, as it is a large file of more than 500mbs)<b>.</b>
+     </li>
+        <li>
+        The <b><i>Raw python code</i></b> is on my 
+        <a href="https://github.com/Mbuch401/Data_analysis/blob/main/Cow%20analysis.pdf" target="_blank">My github repository</a>, or
+         you can just <a href="pdfs\Cow analysis.pdf" download>download the pdf</a> (PDF, 1 mb).
+     </li>
+    </ul>
+    <p>🐄✨<i><b>please note that I will upload the powerpoint presentation in a few.</b></i></p>
+
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Mbuch. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

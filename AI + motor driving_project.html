@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engines, Algorithms: Decoding Motor Sounds with AI</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link your CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.8; /* Increases line spacing */
+            margin: 0;
+            padding: 0;
+        }
+        header, footer {
+            text-align: center;
+            padding: 20px;
+        }
+        main {
+            padding: 20px;
+        }
+        section p {
+            line-height: 1.8; /* Additional line spacing for paragraphs */
+            margin-bottom: 20px; /* Adds spacing between paragraphs */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Engines, Algorithms: Decoding Motor Sounds with AI</h1>
+        <p>Published on November 10, 2024</p>
+    </header>
+    <main>
+        <section>
+            <p style="text-indent: 30px;">
+                Diving into motor classification and anomaly detection project felt like stepping into a mechanical balance,
+                 where every whir told its own story. At the heart of this orchestra was an <a href="https://www.nabto.com/guide-to-iot-esp-32/" target="_blank">ESP32</a>
+                  paired with the <a href="https://www.pixelelectric.com/sensors/light-sound/sound-sensor/max9814-microphone-amplifier-module/" target="_blank">MAX9814 microphone</a>
+                  —an acoustic detective that could pick up the faintest clues in motor sounds. My goal was to classify
+                   motor states—full speed, half speed, and idle—and detect anomalies that could signal trouble cooking up beneath
+                    the surface. Imagine a mechanic with superhuman hearing, equipped with AI instead of a wrench, capable of
+                     recognising breakdowns before they even happen.
+            </p>
+            <p style="text-indent: 30px;">
+                The adventure began with collecting raw audio samples. Carefully capturing its full-speed roar,
+                 its steady half-speed hum, and its gentle idle purr. With the MAX9814 microphone as my trusted
+                  sidekick and its built-in auto-gain control ensured every nuance of sound was captured with clarity,
+                   no matter the motor's volume. These weren’t just sounds—they were data, the golden nuggets I
+                    needed to train my machine learning model.
+            </p>
+            <p style="text-indent: 30px;">
+                But, as with any great journey, challenges weren’t far behind.
+                 Storing audio files in .wav format on an SD card turned into a technical maze, and debugging the
+                  setup was like searching for a needle in a haystack while blindfolded. The smallest misstep could throw
+                   everything off, but with patience and determination, I pieced it all together. Each milestone—getting
+                    clean audio samples, ensuring proper file storage, and setting up the hardware—felt like a small victory.
+            </p>
+                <p style="text-indent: 30px;">Then came the thrill of training the machine learning model. Using tools like
+                     <a href="https://edgeimpulse.com/" target="_blank">Edge Impulse</a>, I transformed
+                     those raw recordings into something far more powerful: a system that could classify motor states with
+                      impressive accuracy and flag anomalies with precision. Those anomalies—tiny, often-overlooked indicators
+                       of wear and tear—were like catching a plot twist in a mystery novel before it unraveled. Every flagged
+                        anomaly felt like a win, knowing it could prevent costly repairs and extend the life of the motor.</p>
+
+            <p style="text-indent: 30px;"> This project wasn’t just an engineering challenge—it was a delicate dance between hardware and software,
+                 creativity and precision, theory and practice. It pushed me to think outside the box, adapt to the unexpected,
+                  and appreciate the artistry of sound in a mechanical world. With each successful classification and every
+                   anomaly detected, I wasn’t just listening to a motor—I was redefining what it means to truly hear machines.</p>            
+                   
+            <h2>Repositories insights & Documentation</h2>
+            <ul>
+                <li><a href="https://github.com/Mbuch401/Motor-Speeds-Classification-project" target="_blank">My GitHub Repository</a></li>
+                <li><a href="https://www.sciencedirect.com/science/article/pii/S0957417423002397"target="_blank">Future Improvements and Applications</a></li>
+                <li><a href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=http://www.diva-portal.org/smash/get/diva2:1334329/FULLTEXT01.pdf&ved=2ahUKEwiCnd32-o2LAxWyhv0HHaQ2NngQFnoECDgQAQ&usg=AOvVaw3B0trNMQXHjNZbqpUm9CTz"target="_blank">Where I got futher Insights</a></li>
+                <li><a href="https://predictabledesigns.com/audio-design-embedded-applications/?" target="_blank">Hardware Selection Criteria</a></li>
+        </ul>
+        </section>
+    </main>
+    <footer>
+        <p style="text-indent: 30px;">&copy;2024 Mbuch. Partial Rights Reserved.</p>
+    </footer>
+</body>
+</html>
