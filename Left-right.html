@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading Motion</title>
+    <link rel="stylesheet" href="123.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Inter:wght@400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="nature-overlay">
+        <!-- Hero Section -->
+        <header class="hero">
+            <div class="hero-content">
+                <h1><u>Motion Recognition System for Dynamic Movement Analysis</u></h1>
+                <p><i><b>Technologies</b>: ESP32, MPU6050, C++, Python, Sensor Fusion, Data Processing</i></p>
+               <p><i><b>Duration</b>: 2 months</i></p>
+            </div>
+           
+        </header>
+
+        <!-- Project Content -->
+        <main id="project">
+            <section class="section">
+                <h2>The Idea</h2>
+                <p>In this project, I developed a compact, low-cost motion recognition system using the ESP32 microcontroller
+                     paired with the MPU6050 inertial measurement unit (IMU). The goal was to create a system capable of detecting
+                      and classifying basic directional movements—such as forward, backward, left, right, and stationary states—in
+                       real-time. This project showcases my ability to design embedded systems for practical applications, with
+                        a focus on precise movement tracking and efficient data processing.
+                </p>
+                
+            </section>
+
+            <div class="wood-divider"></div>
+
+            <section class="section">
+                <h2>The Build</h2>
+                <p>The system leverages the MPU6050’s accelerometer and gyroscope to capture raw motion data, which I processed using
+                     sensor fusion techniques to derive meaningful directional insights. I programmed the ESP32 in C++ to handle
+                      real-time data acquisition and implemented a lightweight algorithm to classify movements based on thresholds
+                       and patterns. To validate the system’s accuracy, I conducted tests simulating various movement scenarios,
+                        achieving reliable detection of intended motions with minimal latency.
+                </p>
+             
+            </section>
+
+            <section class="section">
+                <h2>Implications</h2>
+                <p>While this project centered on directional movement, its underlying principles—capturing and interpreting 
+                    sensor data—have broader implications. For instance, similar systems could monitor dynamic behaviors in
+                     real-world settings, such as tracking activity patterns to infer health or operational states. In a
+                     <a href="Cow_Analysis_project.html" target="_blank">related project</a>
+                     , I analyzed a dataset (I downloaded <a href="https://www.kaggle.com/datasets/uihkjgfduyg7o8ga/animal-behaviour-accelometere-data" target="_blank">here</a>)
+                      from a similar sensor mounted on a Livestock animal, exploring how motion data
+                       could reveal behavioral trends. By applying statistical techniques in Python, I identified patterns
+                        that hinted at well-being or stress, demonstrating how sensor-driven insights can inform decision-making
+                         without diving into specifics like health diagnostics.
+
+                </p>
+              
+            </section>
+
+            <section class="section">
+                <h2>Results</h2>
+                <p>This motion recognition system is a testament to my ability to build scalable, sensor-based solutions
+                     for real-time applications. Its design prioritizes simplicity and adaptability, making it suitable
+                      for environments where understanding movement is key—whether in robotics, IoT, or even indirectly
+                       supporting systems that ensure optimal conditions for living beings. I’m excited to explore how
+                        such technologies can contribute to innovative solutions in dynamic, real-world contexts.
+
+                </p>
+              
+            </section>
+            <section class="section">
+                <h2>Insights and documentation</h2>
+                <ul>
+                    <li>
+                        View the data collection code on
+                         <a href="https://github.com/Mbuch401/Motion-Infrencing-project/blob/main/MPU6050_TRIAL7/MPU6050_TRIAL1_SUCCESS.ino" target="_blank">My Github</a> repository
+                    </li>
+                    <li>View the data collected from the sensor on the same
+                        <a href="https://github.com/Mbuch401/Motion-Infrencing-project/tree/main" target="_blank">Github</a> repository
+                        </li>
+                    <li>Python data collection automation code 
+                        (<a href="https://github.com/Mbuch401/Motion-Infrencing-project/blob/main/PYTHON%20CODE/capture_esp32_data.py" target="_blank">view</a>)
+                        </li>
+                    
+                </ul>   
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+           
+            <p>Thank you! - Mbuch</p>
+        </footer>
+    </div>
+
+    <script src="1234.js"></script>
+</body>
+</html>
