@@ -3,64 +3,200 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Investigating Reproductive Strategies and Species Conservation</title>
+    <title>Decoding dairy</title>
     <link rel="stylesheet" href="styles.css"> <!-- Link your CSS -->
     <style>
+        /* Black and white/brown theme for dairy cows - with improved link visibility */
         body {
             font-family: Arial, 'Times New Roman', Times, serif;
-            line-height: 1.8; /* Increases line spacing */
+            line-height: 1.8;
             margin: 0;
             padding: 0;
+            background-color: #d8ffc1; /* Lighter cream background */
+            color: #3a2a18; /* Dark brown text */
+            background-image: linear-gradient(to bottom, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.8) 100%),
+                           url('https://images.unsplash.com/photo-1570042225831-d98fa7577f1e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-attachment: fixed;
+            background-size: cover;
         }
-        header, footer {
+
+        header {
+            background: linear-gradient(135deg, #5d4037, #8d6e63); /* Lighter brown gradient */
+            color: #ffffff;
+            padding: 40px 0;
             text-align: center;
-            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border-bottom: 5px solid #a1887f; /* Light brown */
         }
+
         main {
-            padding: 20px;
+            padding: 40px;
+            max-width: 900px;
+            margin: 30px auto;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            border-radius: 12px;
+            border-left: 4px solid #a1887f; /* Light brown */
         }
-        section p {
-            line-height: 1.8; /* Additional line spacing for paragraphs */
-            margin-bottom: 20px; /* Adds spacing between paragraphs */
+
+        h2, h3, .section-heading {
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
+            margin-left: auto;
+            margin-right: auto;
+            color: #4e342e; /* Medium brown */
+        }
+
+        h2::after, h3::after, .section-heading::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(to right, #8d6e63, #5d4037); /* Brown gradient */
+            border-radius: 2px;
+        }
+
+        h3 {
+            border-left: 4px solid #8d6e63; /* Medium brown */
+            padding-left: 12px;
+        }
+
+        /* Improved link styling with green color for better visibility */
+        a {
+            color: #2e7d32; /* Forest green */
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        a:hover {
+            color: #1b5e20; /* Darker green */
+            text-decoration: underline;
+        }
+
+        a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #2e7d32; /* Forest green */
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        a:hover::after {
+            transform: scaleX(1);
+        }
+
+        ul li {
+            position: relative;
+            list-style-type: none;
+            padding-left: 20px;
+            margin-bottom: 10px;
+        }
+
+        ul li::before {
+            content: "🐄"; /* Cow emoji instead of bullet */
+            position: absolute;
+            left: -20px;
+            top: 0;
+            font-size: 14px;
+            color: #795548; /* Medium brown */
+        }
+
+        footer {
+            background: linear-gradient(135deg, #5d4037, #8d6e63); /* Brown gradient */
+            color: #ffffff;
+            text-align: center;
+            padding: 30px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            border-top: 5px solid #a1887f; /* Light brown */
+        }
+
+        /* Add subtle cow pattern to sections */
+        section {
+            position: relative;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        section::before {
+            content: "🥛";
+            position: absolute;
+            right: 0;
+            top: 0;
+            font-size: 20px;
+            opacity: 0.2;
+            transform: rotate(15deg);
+        }
+
+        /* Button styling */
+        .btn {
+            background-color: #5d4037; /* Medium-dark brown */
+            border: none;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #4e342e; /* Dark brown */
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Lighter alternating section backgrounds */
+        section:nth-child(odd) {
+            background: linear-gradient(to right, rgb(147, 189, 122), rgba(250, 250, 250, 0.9));
+        }
+
+        section:nth-child(even) {
+            background: linear-gradient(to right, rgba(250, 250, 250, 0.9), rgba(255, 255, 255, 0.9));
         }
     </style>
 </head>
 <body>
     <header>
         <h1><u>Decoding Dairy: Using Accelerometer Data to Monitor Cow Activity Patterns.</u></h1>
-        <p>Published on Feb 20, 2025</p>
+        <div class="publish-date">Projet Updated: Feb 24, 2025</div>
     </header>
     <main>
         <section>
+            <h2>Introduction</h2>
             <p style="text-indent: 30px;">
-                Ever wondered how we can understand what a cow is doing without watching it 24/7? This project dives
-                 into the fascinating world of dairy cattle monitoring using modern sensor technology—and it took me three days to complete.
-                  Let me walk you through the journey.
+                Have you ever wondered how farmers keep tabs on hundreds of cows without watching them all day? 
+                I spent three days exploring this question using cutting-edge sensor technology, and the results 
+                were eye-opening. Here's the story of how I used data to decode what cows are up to.
             </p>
         <h3>The Challenge</h3>
         <p style="text-indent: 30px;">
-            Imagine running a dairy farm with hundreds of cows. Each cow’s activity pattern can reveal insights into their
-             health, feeding behavior, and even reproductive status. But how do you track this efficiently without spending
-              hours observing each cow? That’s where accelerometer data comes in!<br/>
-
-                The main goal of this project was to study the <b>rest and active states</b> of cows using sensor data.
-                 Spoiler alert: it’s not as simple as it sounds, but it’s incredibly rewarding.
+            Running a dairy farm is no small job. With so many cows, it's tough to know if each one is healthy, 
+            eating well, or ready to reproduce. Constantly checking on them isn't practical, so I set out to find 
+            a smarter way. My goal? Use data from sensors to figure out when cows are active or resting. 
+            Sounds simple, but trust me—it's a wild ride!
         </p>
-            
+                    
         <h3>The Solution</h3>
-
             <p style="text-indent: 30px;">
-                By analyzing movement data collected from a cow-mounted sensor (from a dataset I downloaded on Kaggle),
-                 I developed an analysis that identifies when a cow is active versus resting. The sensor collected data 10 times every 
-                 second(there were more than 14 million rows,and 3 value columns resulting to working with 42 milion individual values),
-                  creating a detailed movement profile of the cow’s day.<br/>
-
-                To make this happen, I relied on invaluable help from different coding models to shorten some of the more complex
-                 parts of the analysis. (Thank goodness for modern tools.)
+                I dug into a massive dataset from Kaggle, packed with movement data from a sensor strapped 
+                to a cow. This gadget recorded the cow's movements 10 times a second, giving me over 14 
+                million data points to work with that's 42 million values total! Using some coding 
+                , I sorted the data into "active" and "resting" moments, painting a clear picture of the cow's daily routine.
             </p>
            <h3> Real-World Applications</h3>
-           <p>This analysis isn’t just academic—it opens up exciting possibilities for dairy farming:
-</p>
+           <p>This analysis isn't just academic—it opens up exciting possibilities for dairy farming:</p>
         <ul>
             <li>
                <b> Early Health Alerts:</b> Sudden changes in activity patterns might indicate illness before visible symptoms appear.
@@ -77,46 +213,43 @@
             <li>
                <b> Herd Management:</b> Understanding individual cow behavior helps optimize farm operations.
             </li>
-
         </ul>
         <h3>The Process</h3>
-        <p>I transformed millions of raw sensor readings into clear activity states. The analysis revealed
-             that this cow typically maintained each state (active or resting) for about 3.5 minutes before
-              transitioning—a pattern that aligns with normal bovine behavior. <br/>
-
-            It’s worth noting that this project was purely a data analysis of a cow pattern dataset I downloaded from Kaggle.
-             It wasn’t about building an embedded machine learning model, but rather about uncovering insights from the data
-              itself and how accurate it was.</p>
+        <p>I took those millions of sensor readings and turned them into a simple story: 
+            this cow switches between active and resting about every 3.5 minutes, which is 
+            totally normal for cows. This project wasn't about building fancy tech but about 
+            digging into the data to find reliable patterns. The dataset came from Kaggle, and 
+            I leaned on coding tools to make the heavy lifting easier.
+        </p>
             <h3>
                 Impact
             </h3>
-            <p>This type of analysis is revolutionizing dairy farming:</p>
+            <p>This kind of tech is a game-changer for dairy farms:
+            </p>
             <ul>
                 <li>
-                    Reduced labor costs through automated monitoring.
+                    Less Work: Sensors do the monitoring, so farmers don't have to.
                 </li>
                 <li>
-                    Improved animal welfare through early intervention.
+                    Happier Cows: Catching health issues early keeps cows comfortable.
                 </li>
                 <li>
-                    Enhanced milk production through better understanding of cow behavior.
+                    More Milk: Understanding behavior boosts production.
                 </li>
-                <li> 
-                    More efficient farm management.
+                <li>
+                     Smarter Farms: Data makes everything run smoother.
                 </li>
-                
-            </ul>
-            
-        <h3>
-            Future Potential
+                            </ul>
+                    <h3>
+            What's next
         </h3>
-        <p>The methodology could be expanded to:</p>
+        <p>This approach could grow to;      </p>
         <ul>
             <li>
                 Track entire herds simultaneously.
             </li>
             <li>
-                Predict health issues before they become serious.
+                Predict health problems before they're serious.
             </li>
             <li>Optimize feeding schedules.
             </li>
@@ -129,34 +262,23 @@
         </ul>
         <h3><u><i>Final Thoughts</i></u></h3>
 <p style="text-indent: 30px;">
-    This project demonstrates how data science transforms traditional farming into precision agriculture,
-     making dairy operations more efficient and sustainable while improving animal welfare. And honestly,
-      it’s pretty cool to think that a dataset from Kaggle and a few days of work can lead to
-       insights that could help farmers and cows alike.<br/>
-
-So, the next time you enjoy a glass of milk, remember: there’s a whole world of data
- and technology working behind the scenes to make it possible!
+    This project shows how data can turn old-school farming into something precise and sustainable. It's pretty 
+    amazing that a Kaggle dataset and a few days of work can uncover insights that help farmers and their cows. 
+    So, next time you sip a glass of milk, think about the tech and data making it possible—it's like a hidden superpower for farming!
 </p>
 
-
-
-
-
 <h2 style="text-align: center"><u>Insights and documentation</u></h2>
-
-
        <li> The <i><b>Animal's dataset </i></b>can be found on 
        <a href="https://www.kaggle.com/datasets/uihkjgfduyg7o8ga/animal-behaviour-accelometere-data" target="_blank">Kaggle</a><b>.</b><br/>
        (no need for downloading it if you're not using it, as it is a large file of more than 500mbs)<b>.</b>
      </li>
         <li>
         The <b><i>Raw python code</i></b> is on my 
-        <a href="https://github.com/Mbuch401/Data_analysis/blob/main/Cow%20analysis.pdf" target="_blank">My github repository</a>, or
-         you can just <a href="pdfs\Cow analysis.pdf" download>download the pdf</a> (PDF, 1 mb).
+        <a href="https://github.com/Mbuch401/Data_analysis/blob/main/Cow%20analysis.pdf" target="_blank">My github repository</a>, or 
+        you can just <a href="pdfs\Cow analysis.pdf" download>download the pdf</a> (PDF, 1 mb).
      </li>
     </ul>
     <p>🐄✨<i><b>please note that I will upload the powerpoint presentation in a few.</b></i></p>
-
         </section>
     </main>
     <footer>
